@@ -37,6 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) AWSServiceConfiguration *configuration;
 @property (nonatomic, readonly) AWSCognitoIdentityUserPoolConfiguration *userPoolConfiguration;
 @property (nonatomic, readonly) NSString *identityProviderName;
+@property (nonatomic, assign) BOOL isPasswordFlow;
 
 /**
  Set this delegate to interactively prompt users for authentication challenges when necessary
