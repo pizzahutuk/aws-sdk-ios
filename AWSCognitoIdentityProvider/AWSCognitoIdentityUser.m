@@ -304,7 +304,7 @@ static const NSString * AWSCognitoIdentityUserUserAttributePrefix = @"userAttrib
                                          clientMetaData:(nullable NSDictionary<NSString *,NSString *> *) clientMetaData
                                isInitialCustomChallenge:(BOOL) isInitialCustomChallenge {
     AWSTask *authenticationTask = nil;
-    if (self.pool.userPoolConfiguration.migrationEnabled) {
+    if (self.pool.userPoolConfiguration.migrationEnabled || AWSCognitoIdentityUserPool.defaultCognitoIdentityUserPool.isPasswordFlow) {
         authenticationTask = [self migrationAuth:username
                                         password:password
                                   validationData:validationData
